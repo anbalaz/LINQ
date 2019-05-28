@@ -15,7 +15,7 @@ namespace LINQ
 
             // !!! INSERT YOUR LINQ  MAGIC HERE !!!            
 
-            return new double[] { };
+            return doubles.OrderByDescending(d => d).ToArray();
         }
 
         /// <summary>
@@ -27,8 +27,8 @@ namespace LINQ
             string[] words = { "cherry", "apple", "blueberry" };
 
             // !!! INSERT YOUR LINQ  MAGIC HERE !!!
-            
-            return new List<string>();
+
+            return words.OrderBy(w => w).ToList();
         }
 
         /// <summary>
@@ -42,8 +42,8 @@ namespace LINQ
                                        new {Name = "Cathy", Score = 45} };
 
             // !!! INSERT YOUR LINQ  MAGIC HERE !!!
-            
-            return new Dictionary<string, int>();
+
+            return scoreRecords.ToDictionary(x => x.Name,x=>x.Score);
         }
 
         /// <summary>
@@ -55,8 +55,8 @@ namespace LINQ
             object[] numbers = { null, 1.0, "two", 3, "four", 5, "six", 7.0 };
 
             // !!! INSERT YOUR LINQ  MAGIC HERE !!!
-            
-            return new double[] { };
+
+            return numbers.OfType<double>();
         }
     }
 }

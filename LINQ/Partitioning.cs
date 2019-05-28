@@ -1,6 +1,7 @@
 ﻿using LINQ.Data;
 using LINQ.Models;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace LINQ
 {
@@ -17,7 +18,7 @@ namespace LINQ
 
             // !!! INSERT YOUR LINQ  MAGIC HERE !!!
 
-            return new int[] { };
+            return numbers.Take(3);
         }
 
         /// <summary>
@@ -29,7 +30,9 @@ namespace LINQ
             List<Customer> customers = DataLoader.GetCustomerList();
 
             // !!! INSERT YOUR LINQ  MAGIC HERE !!!
-
+            //return (from c in customers
+            //        where c.Region == "WA"
+            //        from or)
             return new CustomerOrderDto[] { };
         }
 
@@ -43,7 +46,7 @@ namespace LINQ
 
             // !!! INSERT YOUR LINQ  MAGIC HERE !!!
 
-            return new int[] { };
+            return numbers.Skip(4);
         }
 
         /// <summary>

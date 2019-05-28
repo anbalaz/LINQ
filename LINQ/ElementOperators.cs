@@ -16,8 +16,8 @@ namespace LINQ
             List<Product> products = DataLoader.GetProductList();
 
             // !!! INSERT YOUR LINQ  MAGIC HERE !!!            
-            
-            return null;
+
+            return products.OrderBy(p => p.Category).First(x => x.Category == "Confections");
         }
 
         /// <summary>
@@ -29,8 +29,8 @@ namespace LINQ
             string[] strings = { "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" };
 
             // !!! INSERT YOUR LINQ  MAGIC HERE !!!            
-            
-            return string.Empty;
+
+            return strings.First(s => s.StartsWith("o"));
         }
 
         /// <summary>
@@ -42,8 +42,8 @@ namespace LINQ
             int[] numbers = { };
 
             // !!! INSERT YOUR LINQ  MAGIC HERE !!!            
-            
-            return 42;
+
+            return numbers.FirstOrDefault();
         }
 
         /// <summary>
@@ -55,8 +55,8 @@ namespace LINQ
             List<Product> products = DataLoader.GetProductList();
 
             // !!! INSERT YOUR LINQ  MAGIC HERE !!!            
-            
-            return new Product();
+
+            return products.FirstOrDefault(p => p.ProductID == 789);
         }
 
         /// <summary>
@@ -68,8 +68,8 @@ namespace LINQ
             int[] numbers = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
 
             // !!! INSERT YOUR LINQ  MAGIC HERE !!!            
-            
-            return 42;
+
+            return numbers.Where(n => n > 4).ElementAt(2);
         }
     }
 }

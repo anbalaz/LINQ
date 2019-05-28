@@ -1,6 +1,7 @@
 ﻿using LINQ.Data;
 using LINQ.Models;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace LINQ
 {
@@ -17,7 +18,7 @@ namespace LINQ
 
             // !!! INSERT YOUR LINQ  MAGIC HERE !!!
 
-            return new string[] { };
+            return words.OrderBy(n => n);
         }
 
         /// <summary>
@@ -30,7 +31,7 @@ namespace LINQ
 
             // !!! INSERT YOUR LINQ  MAGIC HERE !!!            
 
-            return new string[] { };
+            return words.OrderBy(n => n.Length);
         }
 
         /// <summary>
@@ -43,7 +44,7 @@ namespace LINQ
 
             // !!! INSERT YOUR LINQ  MAGIC HERE !!!            
 
-            return new Product[] { };
+            return products.OrderBy(n => n.ProductName);
         }
 
         /// <summary>
@@ -56,7 +57,7 @@ namespace LINQ
 
             // !!! INSERT YOUR LINQ  MAGIC HERE !!!            
 
-            return new double[] { };
+            return doubles.OrderByDescending(n => n);
         }
 
         /// <summary>
@@ -69,7 +70,7 @@ namespace LINQ
 
             // !!! INSERT YOUR LINQ  MAGIC HERE !!!            
 
-            return new Product[] { };
+            return products.OrderByDescending(n => n.UnitsInStock);
         }
 
         /// <summary>
@@ -82,7 +83,7 @@ namespace LINQ
 
             // !!! INSERT YOUR LINQ  MAGIC HERE !!!
 
-            return new string[] { };
+            return digits.OrderBy(n => n.Length).ThenBy(n => n);
         }
 
         /// <summary>
@@ -95,7 +96,7 @@ namespace LINQ
 
             // !!! INSERT YOUR LINQ  MAGIC HERE !!!
 
-            return new string[] { };
+            return digits.Where(n => n[1]=='i').Reverse();
         }
     }
 }

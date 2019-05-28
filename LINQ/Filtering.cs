@@ -18,7 +18,7 @@ namespace LINQ
 
             // !!! INSERT YOUR LINQ  MAGIC HERE !!!
 
-            return new int[] { };
+            return numbers.Where(n => n < 5);
         }
 
         /// <summary>
@@ -31,7 +31,7 @@ namespace LINQ
 
             // !!! INSERT YOUR LINQ  MAGIC HERE !!!
 
-            return new Product[] { };
+            return products.Where(n => n.UnitsInStock == 0);
         }
 
         /// <summary>
@@ -44,7 +44,7 @@ namespace LINQ
 
             // !!! INSERT YOUR LINQ  MAGIC HERE !!!
 
-            return new Product[] { };
+            return products.Where(n => n.UnitsInStock > 0 && n.UnitPrice > 3);
         }
 
         /// <summary>
@@ -57,7 +57,12 @@ namespace LINQ
 
             // !!! INSERT YOUR LINQ  MAGIC HERE !!!
 
-            return new CustomerDto[] { };
+            return customers.Where(n => n.Region == "WA")
+                .Select(c => new CustomerDto()
+                {
+                    CustomerId = c.CustomerID,
+                    OrderCount = c.Orders.Length
+                });
         }
 
         /// <summary>
@@ -70,8 +75,7 @@ namespace LINQ
 
             // !!! INSERT YOUR LINQ  MAGIC HERE !!!
 
-            return new string[] { };
+            return digits.Where((n, i) => n.Length < i);
         }
-
     }
 }
